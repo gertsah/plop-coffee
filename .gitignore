@@ -1,0 +1,14 @@
+# temp / working files
+_drop/
+__pycache__/
+*.pyc
+
+# editor / tooling
+.claude/
+.DS_Store
+Thumbs.db
+
+# superseded / unused media (kept locally, not deployed)
+assets/cup/
+assets/cup-spin.mp4
+assets/cup-spin-smooth.mp4

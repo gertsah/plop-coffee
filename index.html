@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plop — кофейня в Новороссийске</title>
+  <meta name="description" content="Plop — уютная авторская кофейня на Анапском шоссе, 41 в Новороссийске. Свежий кофе, матча, выпечка. Можно с ноутбуком и с собакой. Рейтинг 4.8, номинант 2ГИС 2026." />
+  <meta name="theme-color" content="#D88A2C" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Plop — кофейня в Новороссийске" />
+  <meta property="og:description" content="Авторский кофе и тёплая атмосфера на Анапском шоссе, 41. Ежедневно 08:00–21:00." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Fonts: Unbounded (display, Cyrillic) + Manrope (body, Cyrillic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body>
+
+  <!-- SVG flower clip-path (echoes the wall doodles) -->
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <clipPath id="flowerClip" clipPathUnits="objectBoundingBox">
+        <circle cx="0.5" cy="0.5" r="0.235" />
+        <ellipse cx="0.5" cy="0.27" rx="0.18" ry="0.27" />
+        <ellipse cx="0.5" cy="0.27" rx="0.18" ry="0.27" transform="rotate(72 0.5 0.5)" />
+        <ellipse cx="0.5" cy="0.27" rx="0.18" ry="0.27" transform="rotate(144 0.5 0.5)" />
+        <ellipse cx="0.5" cy="0.27" rx="0.18" ry="0.27" transform="rotate(216 0.5 0.5)" />
+        <ellipse cx="0.5" cy="0.27" rx="0.18" ry="0.27" transform="rotate(288 0.5 0.5)" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="header">
+    <div class="nav-capsule">
+      <a href="#hero" class="logo" aria-label="Plop — на главную">
+        <img src="assets/logo.png" alt="Plop" class="logo-img" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#hero" class="nav-link">Главная</a>
+        <a href="#menu" class="nav-link">Меню</a>
+        <a href="#catalog" class="nav-link">Напитки</a>
+        <a href="#about" class="nav-link">О нас</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+      </nav>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span class="burger-box"><span></span><span></span><span></span></span>
+    </button>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-media" aria-hidden="true">
+      <!-- Положите реальный ролик в assets/hero.mp4 и кадр-постер в assets/hero-poster.jpg.
+           Пока файлов нет, под видео виден тёплый градиентный фон-фолбэк. -->
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/hero.mp4?v=2" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Прокрутить вниз">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- everything after the hero scrolls up over the sticky hero -->
+  <div class="content-stack">
+
+  <!-- ===================== CUP 360 (scroll-driven spin) ===================== -->
+  <section class="cup-spin" id="cup">
+    <div class="cup-stage">
+      <video id="cupVideo" class="cup-video" muted playsinline preload="auto" aria-label="Фирменный стакан Plop, 360°">
+        <source src="assets/cup-spin-120.mp4" type="video/mp4" />
+      </video>
+      <div class="cup-scrim" aria-hidden="true"></div>
+      <div class="cup-copy">
+        <span class="eyebrow">Фирменный стакан</span>
+        <h2>Узнаваемый <span class="ink-accent">с первого глотка</span></h2>
+        <p class="cup-hint">Листай — рассмотри со всех сторон</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="eyebrow reveal" data-reveal>О кофейне</span>
+        <h2 class="reveal" data-reveal>Маленькое место <br />с <span class="ink-accent">большим характером</span></h2>
+        <p class="reveal" data-reveal>
+          Мы обжариваем вкус каждого утра. В Plop варят кофе так, будто он для близкого друга:
+          бережно, с настроением и без суеты. Здесь пахнет свежей выпечкой, играет негромкая
+          музыка, а бариста помнит ваш любимый напиток.
+        </p>
+        <p class="reveal" data-reveal>
+          Заходите поработать с ноутбуком, встретиться за матчей или просто помолчать над чашкой
+          у окна. До 25 мест внутри и столики на улице — выбирайте настроение.
+        </p>
+        <ul class="about-tags reveal" data-reveal>
+          <li>С ноутбуком — welcome</li>
+          <li>Можно с собакой</li>
+          <li>Столики на улице</li>
+          <li>До 25 мест</li>
+        </ul>
+      </div>
+
+      <div class="about-visual reveal" data-reveal>
+        <!-- Замените на реальное фото: <img src="assets/about.jpg" alt="Бариста готовит кофе в Plop"> -->
+        <div class="ph ph-about" role="img" aria-label="Интерьер кофейни Plop">
+          <span class="ph-mark">plop</span>
+          <span class="ph-note">фото интерьера / бариста</span>
+        </div>
+        <div class="about-chip">
+          <strong>~400 ₽</strong>
+          <span>средний чек</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MENU ===================== -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="eyebrow">Меню</span>
+        <h2>Что нальём и подадим</h2>
+        <p class="section-sub">Цены уточняйте у бариста — средний чек около 400 ₽.</p>
+      </div>
+
+      <div class="menu-card reveal" data-reveal>
+      <div class="menu-tabs" role="tablist" aria-label="Категории меню">
+        <button class="tab is-active" role="tab" aria-selected="true" data-tab="coffee">Кофе</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="drinks">Напитки</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="food">Еда</button>
+      </div>
+
+      <div class="menu-panel is-active" data-panel="coffee">
+        <ul class="menu-list">
+          <li class="menu-item"><span class="mi-name">Эспрессо</span><span class="mi-dots"></span><span class="mi-price">от 130 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Американо</span><span class="mi-dots"></span><span class="mi-price">от 150 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Капучино</span><span class="mi-dots"></span><span class="mi-price">от 190 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Латте</span><span class="mi-dots"></span><span class="mi-price">от 210 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Бамбл-кофе</span><span class="mi-dots"></span><span class="mi-price">от 260 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Айс-кофе</span><span class="mi-dots"></span><span class="mi-price">от 240 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Кофе по-турецки</span><span class="mi-dots"></span><span class="mi-price">от 180 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Кофе без кофеина</span><span class="mi-dots"></span><span class="mi-price">от 200 ₽</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-panel" data-panel="drinks" hidden>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="mi-name">Матча</span><span class="mi-dots"></span><span class="mi-price">от 260 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Какао</span><span class="mi-dots"></span><span class="mi-price">от 190 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Горячий шоколад</span><span class="mi-dots"></span><span class="mi-price">от 230 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Чай с собой</span><span class="mi-dots"></span><span class="mi-price">от 120 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Смузи</span><span class="mi-dots"></span><span class="mi-price">от 280 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Молочные коктейли</span><span class="mi-dots"></span><span class="mi-price">от 270 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Свежевыжатые соки</span><span class="mi-dots"></span><span class="mi-price">от 250 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Лимонад</span><span class="mi-dots"></span><span class="mi-price">от 220 ₽</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-panel" data-panel="food" hidden>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="mi-name">Пончики</span><span class="mi-dots"></span><span class="mi-price">от 120 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Блины</span><span class="mi-dots"></span><span class="mi-price">от 180 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Салаты</span><span class="mi-dots"></span><span class="mi-price">от 290 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Сэндвичи</span><span class="mi-dots"></span><span class="mi-price">от 250 ₽</span></li>
+          <li class="menu-item"><span class="mi-name">Бутерброды</span><span class="mi-dots"></span><span class="mi-price">от 190 ₽</span></li>
+        </ul>
+      </div>
+      </div><!-- /.menu-card -->
+    </div>
+  </section>
+
+  <!-- ===================== CATALOG (signature drinks) ===================== -->
+  <section class="catalog section" id="catalog">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="eyebrow">Авторские напитки</span>
+        <h2>Хиты, ради которых <span class="ink-accent">возвращаются</span></h2>
+        <p class="section-sub">Фирменные напитки Plop — каждый объёмом 400 мл.</p>
+      </div>
+    </div>
+
+    <div class="catalog-carousel reveal" data-reveal>
+      <button class="cat-arrow cat-prev" id="catPrev" aria-label="Назад">‹</button>
+
+      <div class="catalog-viewport" id="catViewport">
+        <ul class="catalog-track" id="catalogTrack">
+          <li class="product-card">
+            <div class="product-media" style="--top:#3f8f3a;--bot:#b53a3a">
+              <img src="assets/menu/klubnichnaya-matcha.png" alt="Клубничная матча в рифлёном стакане"
+                   loading="lazy" onerror="this.closest('.product-media').classList.add('no-img');this.remove()" />
+              <span class="glass-ic" aria-hidden="true"></span>
+            </div>
+            <div class="product-info">
+              <h3>Клубничная матча</h3>
+              <span class="product-price">340 ₽ <em>· 400 мл</em></span>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-media" style="--top:#5fa83f;--bot:#e6d27a">
+              <img src="assets/menu/matcha-tonik-marakuya.png" alt="Матча-тоник маракуйя в рифлёном стакане"
+                   loading="lazy" onerror="this.closest('.product-media').classList.add('no-img');this.remove()" />
+              <span class="glass-ic" aria-hidden="true"></span>
+            </div>
+            <div class="product-info">
+              <h3>Матча-тоник маракуйя</h3>
+              <span class="product-price">320 ₽ <em>· 400 мл</em></span>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-media" style="--top:#c9a98a;--bot:#e7d8c4">
+              <img src="assets/menu/ays-latte-malina-fistashka.png" alt="Айс-латте малина-фисташка в рифлёном стакане"
+                   loading="lazy" onerror="this.closest('.product-media').classList.add('no-img');this.remove()" />
+              <span class="glass-ic" aria-hidden="true"></span>
+            </div>
+            <div class="product-info">
+              <h3>Айс-латте малина-фисташка</h3>
+              <span class="product-price">490 ₽ <em>· 400 мл</em></span>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-media" style="--top:#7a4a2a;--bot:#d9b48a">
+              <img src="assets/menu/kapuchino-snikers.png" alt="Капучино сникерс в рифлёном стакане"
+                   loading="lazy" onerror="this.closest('.product-media').classList.add('no-img');this.remove()" />
+              <span class="glass-ic" aria-hidden="true"></span>
+            </div>
+            <div class="product-info">
+              <h3>Капучино сникерс</h3>
+              <span class="product-price">450 ₽ <em>· 400 мл</em></span>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-media" style="--top:#3fa83f;--bot:#2e7d2e">
+              <img src="assets/menu/legendarnyy-kaktus.png" alt="Легендарный кактус в рифлёном стакане"
+                   loading="lazy" onerror="this.closest('.product-media').classList.add('no-img');this.remove()" />
+              <span class="glass-ic" aria-hidden="true"></span>
+            </div>
+            <div class="product-info">
+              <h3>Легендарный кактус</h3>
+              <span class="product-price">370 ₽ <em>· 400 мл</em></span>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-media" style="--top:#f0552f;--bot:#d83a3a">
+              <img src="assets/menu/zemlyanichnoe-siyanie.png" alt="Земляничное сияние в рифлёном стакане"
+                   loading="lazy" onerror="this.closest('.product-media').classList.add('no-img');this.remove()" />
+              <span class="glass-ic" aria-hidden="true"></span>
+            </div>
+            <div class="product-info">
+              <h3>Земляничное сияние</h3>
+              <span class="product-price">370 ₽ <em>· 400 мл</em></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <button class="cat-arrow cat-next" id="catNext" aria-label="Вперёд">›</button>
+    </div>
+
+    <div class="container">
+      <div class="catalog-dots" id="catalogDots" role="tablist" aria-label="Навигация по каталогу"></div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section class="features section">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="eyebrow">Почему к нам</span>
+        <h2>Маленькие радости <span class="ink-accent">Plop</span></h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature reveal" data-reveal>
+          <span class="feature-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h12v4a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5z"/><path d="M17 10h2.2a2.3 2.3 0 0 1 0 4.6H17"/><path d="M8 3.5v2M11.5 3.5v2"/></svg>
+          </span>
+          <h3>Заказ навынос</h3>
+          <p>Соберём ваш кофе за пару минут — забегайте по пути.</p>
+        </div>
+        <div class="feature reveal" data-reveal>
+          <span class="feature-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="11" r="1.7"/><circle cx="11" cy="8.5" r="1.7"/><circle cx="15.5" cy="8.5" r="1.7"/><circle cx="18.5" cy="12" r="1.5"/><path d="M8 16.5c0-2.2 1.8-3.5 4-3.5s4 1.3 4 3.5c0 1.9-1.7 3-4 3s-4-1.1-4-3z"/></svg>
+          </span>
+          <h3>Можно с собакой</h3>
+          <p>Хвостатые гости всегда желанны — и миска с водой найдётся.</p>
+        </div>
+        <div class="feature reveal" data-reveal>
+          <span class="feature-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20c-.5-8 4.5-14 14-14.5C19.5 13 14.5 19 5 19"/><path d="M7 18c2.8-3.2 6-5.4 9.5-6.5"/></svg>
+          </span>
+          <h3>Столики на улице</h3>
+          <p>Утренний кофе на свежем воздухе — лучшее начало дня.</p>
+        </div>
+        <div class="feature reveal" data-reveal>
+          <span class="feature-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="10.5" rx="1.6"/><path d="M2.5 19.5h19"/></svg>
+          </span>
+          <h3>Удобно с ноутбуком</h3>
+          <p>Розетки, Wi-Fi и тихий уголок для работы или учёбы.</p>
+        </div>
+        <div class="feature reveal" data-reveal>
+          <span class="feature-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1.2"/><rect x="14" y="4" width="6" height="6" rx="1.2"/><rect x="4" y="14" width="6" height="6" rx="1.2"/><path d="M14 14h3M20 14v3M14 17v3M17 20h3M20 20v0"/></svg>
+          </span>
+          <h3>Оплата по QR</h3>
+          <p>Быстрая оплата по QR-коду — без очередей и сдачи.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="gallery section">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="eyebrow">Галерея</span>
+        <h2>Загляните <span class="ink-accent">внутрь</span></h2>
+        <p class="section-sub">Атмосфера, напитки и интерьер — несколько кадров из Plop.</p>
+      </div>
+      <div class="gallery-grid">
+        <a class="ph-g g1 reveal" data-reveal href="assets/gallery/plop-53.jpg" target="_blank" rel="noopener" aria-label="Интерьер кофейни Plop"><img src="assets/gallery/plop-53.jpg" alt="Интерьер кофейни Plop" loading="lazy" /></a>
+        <a class="ph-g g2 reveal" data-reveal href="assets/gallery/plop-07.jpg" target="_blank" rel="noopener" aria-label="Фирменные стаканы Plop"><img src="assets/gallery/plop-07.jpg" alt="Фирменные стаканы Plop" loading="lazy" /></a>
+        <a class="ph-g g3 reveal" data-reveal href="assets/gallery/plop-03.jpg" target="_blank" rel="noopener" aria-label="Барная стойка"><img src="assets/gallery/plop-03.jpg" alt="Барная стойка Plop" loading="lazy" /></a>
+        <a class="ph-g g4 reveal" data-reveal href="assets/gallery/plop-30.jpg" target="_blank" rel="noopener" aria-label="Авторские напитки"><img src="assets/gallery/plop-30.jpg" alt="Авторские напитки Plop" loading="lazy" /></a>
+        <a class="ph-g g5 reveal" data-reveal href="assets/gallery/plop-08.jpg" target="_blank" rel="noopener" aria-label="Холодные напитки"><img src="assets/gallery/plop-08.jpg" alt="Холодные напитки Plop" loading="lazy" /></a>
+        <a class="ph-g g6 reveal" data-reveal href="assets/gallery/plop-52.jpg" target="_blank" rel="noopener" aria-label="Зал кофейни"><img src="assets/gallery/plop-52.jpg" alt="Зал кофейни Plop" loading="lazy" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="reviews section">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="eyebrow">Отзывы гостей</span>
+        <h2>Нас любят на <span class="ink-accent">4.8 ★</span></h2>
+        <p class="section-sub">29 оценок · 23 отзыва · рейтинг Яндекс Карт</p>
+      </div>
+
+      <div class="reviews-marquee">
+        <div class="reviews-track" id="reviewsTrack">
+        <figure class="review-card">
+          <div class="stars" aria-label="5 из 5">★★★★★</div>
+          <blockquote>Лучший капучино в районе! Уютно, чисто, и пустили с собакой. Теперь забегаю каждое утро.</blockquote>
+          <figcaption>Анна К.</figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="stars" aria-label="5 из 5">★★★★★</div>
+          <blockquote>Матча просто космос. Сидела с ноутбуком пару часов — никто не торопил, розетка рядом.</blockquote>
+          <figcaption>Дмитрий П.</figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="stars" aria-label="5 из 5">★★★★★</div>
+          <blockquote>Маленькое, но очень душевное место. Пончики свежие, кофе ароматный, цены человеческие.</blockquote>
+          <figcaption>Марина С.</figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="stars" aria-label="5 из 5">★★★★★</div>
+          <blockquote>Беру кофе навынос по дороге на работу. Всегда быстро, вкусно и с улыбкой. Рекомендую!</blockquote>
+          <figcaption>Игорь В.</figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="stars" aria-label="5 из 5">★★★★★</div>
+          <blockquote>Интерьер — отдельная любовь: тёплый свет, живые растения. Хочется фотографировать каждую чашку.</blockquote>
+          <figcaption>Ольга Р.</figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="stars" aria-label="5 из 5">★★★★★</div>
+          <blockquote>Бариста помнят мой заказ наизусть. Кофе стабильно вкусный, а матча — лучшая в городе.</blockquote>
+          <figcaption>Сергей М.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSTAGRAM / QR ===================== -->
+  <section class="social section" id="social">
+    <div class="container">
+      <div class="social-panel reveal" data-reveal>
+        <div class="social-text">
+          <span class="eyebrow">Instagram</span>
+          <h2>Подписывайтесь на <span class="ink-accent">@plopcoffee.ru</span></h2>
+          <p>Свежие напитки, новинки меню и атмосфера Plop — каждый день в нашем Instagram. Наведите камеру на QR-код или жмите кнопку.</p>
+          <a class="btn btn-accent" href="https://www.instagram.com/plopcoffee.ru/" target="_blank" rel="noopener">
+            <svg class="btn-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            Открыть Instagram
+          </a>
+        </div>
+        <a class="social-qr" href="https://www.instagram.com/plopcoffee.ru/" target="_blank" rel="noopener" aria-label="Открыть Instagram Plop">
+          <span class="social-qr-card">
+            <img src="assets/qr-instagram.svg" alt="QR-код на Instagram Plop" />
+          </span>
+          <span class="social-qr-note">Наведите камеру телефона</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTS ===================== -->
+  <section class="contacts section" id="contacts">
+    <span class="deco-drop deco-drop--contacts" aria-hidden="true"></span>
+    <div class="container">
+      <div class="contacts-head reveal" data-reveal>
+        <span class="eyebrow">Контакты</span>
+        <h2>Ждём вас <span class="ink-accent">каждый день</span></h2>
+      </div>
+
+      <div class="contacts-grid">
+        <div class="contacts-info">
+          <div class="status-badge reveal" data-reveal id="openStatus" aria-live="polite">
+            <span class="status-dot"></span>
+            <span class="status-text">Уточняем часы…</span>
+          </div>
+
+          <ul class="contact-list">
+            <li class="contact-row reveal" data-reveal>
+              <span class="cr-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              </span>
+              <div class="cr-body">
+                <span class="cr-label">Адрес</span>
+                <a class="cr-value" href="https://yandex.ru/maps/?text=Plop%2C%20Анапское%20шоссе%2C%2041%2C%20Новороссийск&amp;ll=37.751684%2C44.731877&amp;z=17" target="_blank" rel="noopener">
+                  Анапское шоссе, 41, 1 этаж<br />Приморский район, Новороссийск
+                </a>
+              </div>
+            </li>
+            <li class="contact-row reveal" data-reveal>
+              <span class="cr-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.6V12l3 1.8"/></svg>
+              </span>
+              <div class="cr-body">
+                <span class="cr-label">Часы работы</span>
+                <span class="cr-value">Ежедневно 08:00–21:00<br /><em>летом — до 22:00</em></span>
+              </div>
+            </li>
+            <li class="contact-row reveal" data-reveal>
+              <span class="cr-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4-2 1.4a11 11 0 0 0 5 5l1.4-2 4 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 1-2z"/></svg>
+              </span>
+              <div class="cr-body">
+                <span class="cr-label">Телефон</span>
+                <a class="cr-value" href="tel:+79604727423">+7 960 472-74-23</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="contact-actions reveal" data-reveal>
+            <a href="https://wa.me/79604727423" class="btn btn-accent" target="_blank" rel="noopener">
+              <span class="wa-icon" aria-hidden="true"></span> Написать в WhatsApp
+            </a>
+            <a href="tel:+79604727423" class="btn btn-ghost">Позвонить</a>
+          </div>
+        </div>
+
+        <div class="contacts-map reveal" data-reveal>
+          <iframe
+            title="Карта — Plop, Анапское шоссе 41, Новороссийск"
+            src="https://yandex.ru/map-widget/v1/?ll=37.751684%2C44.731877&amp;z=17&amp;pt=37.751684%2C44.731877%2Cpm2rdm&amp;lang=ru_RU"
+            loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-pill">
+            <span class="map-pill-name"><span class="map-pin-dot" aria-hidden="true"></span> Plop · Анапское шоссе, 41</span>
+            <a href="https://yandex.ru/maps/?text=Plop%2C%20Анапское%20шоссе%2C%2041%2C%20Новороссийск&amp;ll=37.751684%2C44.731877&amp;z=17" target="_blank" rel="noopener">Открыть в Яндекс.Картах →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo logo-footer">
+          <img src="assets/logo.png" alt="Plop" class="logo-img" />
+        </a>
+        <p>Кофейня в сердце Новороссийска.<br />Сварено с любовью с утра до вечера.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <a href="#hero">Главная</a>
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="footer-social">
+        <a href="https://wa.me/79604727423" target="_blank" rel="noopener" aria-label="WhatsApp" class="soc">
+          <span class="wa-icon" aria-hidden="true"></span>
+        </a>
+        <a href="tel:+79604727423" class="soc soc-text" aria-label="Позвонить">+7 960 472-74-23</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Plop. Все права защищены.</span>
+      <span>Анапское шоссе, 41 · Новороссийск</span>
+    </div>
+  </footer>
+
+  </div><!-- /.content-stack -->
+
+  <script src="script.js?v=6"></script>
+</body>
+</html>
