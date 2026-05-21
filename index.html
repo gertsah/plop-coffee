@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=27" />
+  <link rel="stylesheet" href="styles.css?v=28" />
 </head>
 <body>
 
@@ -45,11 +45,19 @@
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
-        <a href="#hero" class="nav-link">Главная</a>
-        <a href="#menu" class="nav-link">Меню</a>
-        <a href="#catalog" class="nav-link">Напитки</a>
-        <a href="#about" class="nav-link">О нас</a>
-        <a href="#contacts" class="nav-link">Контакты</a>
+        <span class="nav-eyebrow" aria-hidden="true">Меню сайта</span>
+        <a href="#hero" class="nav-link"><span class="nav-idx" aria-hidden="true">01</span>Главная</a>
+        <a href="#menu" class="nav-link"><span class="nav-idx" aria-hidden="true">02</span>Меню</a>
+        <a href="#catalog" class="nav-link"><span class="nav-idx" aria-hidden="true">03</span>Напитки</a>
+        <a href="#about" class="nav-link"><span class="nav-idx" aria-hidden="true">04</span>О нас</a>
+        <a href="#contacts" class="nav-link"><span class="nav-idx" aria-hidden="true">05</span>Контакты</a>
+        <div class="nav-extra">
+          <a class="nav-cta" href="https://wa.me/79604727423" target="_blank" rel="noopener">
+            <span class="wa-icon" aria-hidden="true"></span> Заказать в WhatsApp
+          </a>
+          <a class="nav-phone" href="tel:+79604727423">+7 960 472-74-23</a>
+          <span class="nav-hours">Ежедневно 08:00–21:00 · Анапское шоссе, 41</span>
+        </div>
       </nav>
     </div>
 
@@ -82,7 +90,7 @@
   <section class="cup-spin" id="cup">
     <div class="cup-stage">
       <video id="cupVideo" class="cup-video" muted playsinline preload="auto" poster="assets/cup-poster.jpg" aria-label="Фирменный стакан Plop, 360°">
-        <source src="assets/cup-spin-mobile.mp4?v=2" type="video/mp4" media="(max-width:760px)" />
+        <source src="assets/cup-spin-mobile.mp4?v=3" type="video/mp4" media="(max-width:760px)" />
         <source src="assets/cup-spin-hd.mp4" type="video/mp4" />
       </video>
       <div class="cup-scrim" aria-hidden="true"></div>
@@ -520,6 +528,6 @@
 
   </div><!-- /.content-stack -->
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>

@@ -157,6 +157,8 @@ h3{font-size:1.22rem;font-weight:600;letter-spacing:-.015em}
 }
 .nav-link:hover{opacity:1;background:rgba(255,255,255,.14)}
 .nav-link:active{background:rgba(255,255,255,.2)}
+/* mobile-menu-only bits, hidden in the desktop capsule */
+.nav-eyebrow,.nav-idx,.nav-extra{display:none}
 
 .burger{
   display:none;align-items:center;justify-content:center;z-index:120;
@@ -223,7 +225,8 @@ h3{font-size:1.22rem;font-weight:600;letter-spacing:-.015em}
 }
 
 @media (max-width:760px){
-  .cup-spin{height:250vh}
+  .cup-spin{height:auto}
+  .cup-stage{position:relative;height:100svh}
   .cup-copy{top:clamp(76px,11vh,120px)}
 }
 .hero-media{position:absolute;inset:0;z-index:0}
@@ -612,21 +615,49 @@ a.cr-value:hover{color:var(--accent)}
   .burger{display:inline-flex}
   .nav-capsule{gap:.5rem;padding:.42rem .5rem}
   .nav.mobile-open{
-    display:flex;flex-direction:column;gap:1rem;position:fixed;inset:0;padding:2rem;
-    background:linear-gradient(160deg, rgba(46,23,15,.94), rgba(26,13,8,.96));
-    -webkit-backdrop-filter:blur(26px);backdrop-filter:blur(26px);
-    align-items:center;justify-content:center;margin:0;z-index:110;
+    display:flex;flex-direction:column;gap:0;position:fixed;inset:0;
+    padding:5.6rem 1.7rem 2.4rem;overflow-y:auto;
+    background:linear-gradient(165deg, rgba(50,26,17,.975), rgba(19,9,5,.99)), url("assets/bg-doodles.png");
+    background-size:auto, 440px;background-repeat:no-repeat, repeat;
+    -webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+    align-items:stretch;justify-content:flex-start;margin:0;z-index:110;text-align:left;
   }
-  .nav.mobile-open .nav-link{
-    font-size:1.4rem;padding:.75em 2em;min-width:240px;text-align:center;
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  .nav.mobile-open .nav-eyebrow{
+    display:block;font-family:var(--font-display);font-weight:600;font-size:.72rem;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gold-soft);opacity:.7;margin:0 .3rem 1rem;
     animation:menuItemIn .5s var(--ease) both;
   }
-  .nav.mobile-open .nav-link:nth-child(1){animation-delay:.05s}
-  .nav.mobile-open .nav-link:nth-child(2){animation-delay:.1s}
-  .nav.mobile-open .nav-link:nth-child(3){animation-delay:.15s}
-  .nav.mobile-open .nav-link:nth-child(4){animation-delay:.2s}
-  .nav.mobile-open .nav-link:nth-child(5){animation-delay:.25s}
+  .nav.mobile-open .nav-link{
+    display:flex;align-items:center;gap:1rem;white-space:normal;opacity:1;
+    font-family:var(--font-display);font-weight:600;font-size:1.55rem;color:var(--cream);
+    padding:1.05rem .3rem;border-radius:0;background:none;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    animation:menuItemIn .5s var(--ease) both;
+  }
+  .nav.mobile-open .nav-link:active{color:var(--gold-soft);background:none}
+  .nav.mobile-open .nav-idx{
+    display:inline-block;width:1.7em;flex:0 0 auto;
+    font-size:.82rem;font-weight:500;color:var(--gold-soft);opacity:.55;
+  }
+  .nav.mobile-open .nav-link:nth-of-type(1){animation-delay:.06s}
+  .nav.mobile-open .nav-link:nth-of-type(2){animation-delay:.12s}
+  .nav.mobile-open .nav-link:nth-of-type(3){animation-delay:.18s}
+  .nav.mobile-open .nav-link:nth-of-type(4){animation-delay:.24s}
+  .nav.mobile-open .nav-link:nth-of-type(5){animation-delay:.30s}
+  .nav.mobile-open .nav-extra{
+    display:flex;flex-direction:column;align-items:flex-start;gap:1rem;margin-top:2.2rem;
+    animation:menuItemIn .5s var(--ease) both;animation-delay:.36s;
+  }
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.55em;
+    background:var(--glass-l);color:var(--ink);border:1px solid rgba(255,255,255,.7);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    padding:.9em 1.7em;border-radius:999px;font-family:var(--font-display);font-weight:600;font-size:1rem;
+    box-shadow:0 14px 30px -16px rgba(0,0,0,.5);
+  }
+  .nav-cta .wa-icon{width:1.2em;height:1.2em}
+  .nav-phone{font-family:var(--font-display);font-weight:600;color:var(--gold-soft);font-size:1.25rem}
+  .nav-hours{color:rgba(243,234,217,.6);font-size:.85rem;line-height:1.5}
   @keyframes menuItemIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
   .about-grid{grid-template-columns:1fr;gap:3rem}
