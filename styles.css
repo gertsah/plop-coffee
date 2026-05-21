@@ -614,6 +614,12 @@ a.cr-value:hover{color:var(--accent)}
   .nav{display:none}
   .burger{display:inline-flex}
   .nav-capsule{gap:.5rem;padding:.42rem .5rem}
+  /* backdrop-filter on the capsule traps position:fixed children -> the
+     fullscreen menu would be confined to the capsule. Drop it while open. */
+  .site-header.nav-open .nav-capsule{
+    -webkit-backdrop-filter:none;backdrop-filter:none;
+    background:transparent;border-color:transparent;box-shadow:none;
+  }
   .nav.mobile-open{
     display:flex;flex-direction:column;gap:0;position:fixed;inset:0;
     padding:5.6rem 1.7rem 2.4rem;overflow-y:auto;
