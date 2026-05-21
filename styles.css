@@ -222,8 +222,9 @@ h3{font-size:1.22rem;font-weight:600;letter-spacing:-.015em}
   background:radial-gradient(circle at 50% 30%, currentColor 0 2px, transparent 2px);
 }
 
-@media (max-width:600px){
-  .cup-spin{height:240vh}
+@media (max-width:760px){
+  .cup-spin{height:auto}
+  .cup-stage{position:relative;height:100svh}
   .cup-copy{top:clamp(76px,11vh,120px)}
 }
 .hero-media{position:absolute;inset:0;z-index:0}

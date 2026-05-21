@@ -175,10 +175,32 @@
     start();
   }
 
-  /* ---------- Cup spin: full-screen scroll-scrubbed video (lerped, cinematic) ---------- */
+  /* ---------- Cup spin: full-screen video ---------- */
   const cupSpin = document.getElementById("cup");
   const cupVideo = document.getElementById("cupVideo");
-  if (cupSpin && cupVideo) {
+  const cupIsMobile = window.matchMedia("(max-width: 760px), (hover: none)").matches;
+
+  if (cupSpin && cupVideo && cupIsMobile) {
+    // Mobile: scroll-scrubbing video is unreliable -> just autoplay the loop.
+    cupVideo.loop = true;
+    cupVideo.muted = true;
+    cupVideo.setAttribute("playsinline", "");
+    cupVideo.setAttribute("autoplay", "");
+    const playCup = () => { const p = cupVideo.play(); if (p) p.catch(() => {}); };
+    if (cupVideo.readyState >= 2) playCup();
+    else cupVideo.addEventListener("loadeddata", playCup, { once: true });
+    cupVideo.addEventListener("canplay", playCup, { once: true });
+    // play when the section scrolls into view (standard mobile pattern)
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) playCup(); });
+      }, { threshold: 0.15 }).observe(cupSpin);
+    }
+    // iOS Low Power / gesture fallback
+    ["touchstart", "click"].forEach((ev) =>
+      document.addEventListener(ev, playCup, { once: true, passive: true })
+    );
+  } else if (cupSpin && cupVideo) {
     const cupCopy = cupSpin.querySelector(".cup-copy");
     let dur = 0, ready = false, targetP = 0, curP = 0, running = false;
     const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
