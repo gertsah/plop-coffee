@@ -270,16 +270,27 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
-  /* ---------- Hero video: fade in when ready, drop if reduced motion ---------- */
+  /* ---------- Hero video: force playback (mobile-safe), drop if reduced motion ---------- */
   const video = document.querySelector(".hero-video");
   if (video) {
     if (reduceMotion) {
       video.removeAttribute("autoplay");
       video.pause();
     } else {
-      const reveal = () => video.classList.add("loaded");
-      if (video.readyState >= 3) reveal();
-      video.addEventListener("canplay", reveal, { once: true });
+      video.muted = true;
+      video.setAttribute("playsinline", "");
+      const playHero = () => { const p = video.play(); if (p) p.catch(() => {}); };
+      if (video.readyState >= 2) playHero();
+      video.addEventListener("loadeddata", playHero, { once: true });
+      video.addEventListener("canplay", playHero, { once: true });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) playHero(); });
+        }, { threshold: 0.05 }).observe(video);
+      }
+      ["touchstart", "click", "scroll"].forEach((ev) =>
+        window.addEventListener(ev, playHero, { once: true, passive: true })
+      );
       video.addEventListener("error", () => video.remove(), { once: true });
     }
   }
