@@ -223,7 +223,8 @@ h3{font-size:1.22rem;font-weight:600;letter-spacing:-.015em}
 }
 
 @media (max-width:760px){
-  .cup-spin{height:320vh}
+  .cup-spin{height:auto}
+  .cup-stage{position:relative;height:100svh}
   .cup-copy{top:clamp(76px,11vh,120px)}
 }
 .hero-media{position:absolute;inset:0;z-index:0}
