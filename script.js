@@ -199,6 +199,30 @@
     ["touchstart", "click", "scroll"].forEach((ev) =>
       window.addEventListener(ev, playCup, { once: true, passive: true })
     );
+    // Scroll-driven motion on mobile (zoom + heading parallax) while the loop plays.
+    if (!reduceMotion) {
+      const cupCopy = cupSpin.querySelector(".cup-copy");
+      let tp = 0, cp = 0, running = false;
+      const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+      const setT = () => {
+        const travel = cupSpin.offsetHeight - window.innerHeight;
+        tp = travel > 0 ? clamp(-cupSpin.getBoundingClientRect().top / travel, 0, 1) : 0;
+        if (!running) { running = true; requestAnimationFrame(tick); }
+      };
+      const tick = () => {
+        cp += (tp - cp) * 0.12;
+        if (Math.abs(tp - cp) < 0.001) { cp = tp; running = false; }
+        cupVideo.style.transform = "scale(" + (1.12 - 0.12 * cp).toFixed(4) + ")";
+        if (cupCopy) {
+          cupCopy.style.opacity = clamp(1 - cp * 1.5, 0, 1).toFixed(3);
+          cupCopy.style.transform = "translateY(" + (-cp * 46).toFixed(1) + "px)";
+        }
+        if (running) requestAnimationFrame(tick);
+      };
+      window.addEventListener("scroll", setT, { passive: true });
+      window.addEventListener("resize", setT, { passive: true });
+      setT();
+    }
   } else if (cupSpin && cupVideo) {
     cupVideo.muted = true;
     cupVideo.setAttribute("playsinline", "");
