@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="stylesheet" href="styles.css?v=29" />
 </head>
 <body>
 
@@ -41,7 +41,7 @@
   <header class="site-header" id="header">
     <div class="nav-capsule">
       <a href="#hero" class="logo" aria-label="Plop — на главную">
-        <img src="assets/logo.png" alt="Plop" class="logo-img" />
+        <img src="assets/logo.png?v=2" alt="Plop" class="logo-img" width="48" height="48" />
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
@@ -72,7 +72,7 @@
       <!-- Положите реальный ролик в assets/hero.mp4 и кадр-постер в assets/hero-poster.jpg.
            Пока файлов нет, под видео виден тёплый градиентный фон-фолбэк. -->
       <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg?v=4">
-        <source src="assets/hero.mp4?v=4" type="video/mp4" media="(max-width:760px)" />
+        <source src="assets/hero.mp4?v=5" type="video/mp4" media="(max-width:760px)" />
         <source src="assets/hero-4k.mp4?v=1" type="video/mp4" />
       </video>
       <div class="hero-overlay"></div>
@@ -89,7 +89,7 @@
   <!-- ===================== CUP 360 (scroll-driven spin) ===================== -->
   <section class="cup-spin" id="cup">
     <div class="cup-stage">
-      <video id="cupVideo" class="cup-video" muted playsinline preload="auto" poster="assets/cup-poster.jpg" aria-label="Фирменный стакан Plop, 360°">
+      <video id="cupVideo" class="cup-video" muted playsinline preload="metadata" poster="assets/cup-poster.jpg" aria-label="Фирменный стакан Plop, 360°">
         <source src="assets/cup-spin-mobile.mp4?v=3" type="video/mp4" media="(max-width:760px)" />
         <source src="assets/cup-spin-hd.mp4" type="video/mp4" />
       </video>
@@ -501,7 +501,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#hero" class="logo logo-footer">
-          <img src="assets/logo.png" alt="Plop" class="logo-img" />
+          <img src="assets/logo.png?v=2" alt="Plop" class="logo-img" width="48" height="48" />
         </a>
         <p>Кофейня в сердце Новороссийска.<br />Сварено с любовью с утра до вечера.</p>
       </div>
